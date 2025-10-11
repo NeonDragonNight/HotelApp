@@ -1,0 +1,27 @@
+﻿<Window x:Class="hotelapp.PassWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hotelapp"
+        mc:Ignorable="d"
+        Title="PassWindow" Height="450" Width="800" Background="MediumAquamarine">
+    <Grid>
+        
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Введіть пароль адміністратора" Margin="50 20 50 0" />
+            <PasswordBox x:Name="Pass" Margin="50 5 50 0"/>
+
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Продовжити" Margin="10,0,10,0" Grid.Column="1" Background="GreenYellow" Click="Button_Click_1"/>
+                <Button Content="Повернутися" Margin="10,0,10,0" Background="Yellow" Click="Button_Click"/>
+            </Grid>
+        </StackPanel>
+        
+    </Grid>
+</Window>
