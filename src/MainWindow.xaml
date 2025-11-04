@@ -5,24 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:hotelapp"
         mc:Ignorable="d"
-        Title="Store" Height="300" Width="400" Background="Aquamarine">
+        Title="HotelApp" Height="1080" Width="1920" WindowState="Maximized" Background="Aquamarine">
 
     <Grid>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <Image Source="/imgs/hotel_img2.png" />
+
+        <StackPanel Margin="100">
+            <TextBlock Text="Автоматизована інформаційна система готелю" Background="White" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold"/>
+        </StackPanel>
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
         
         <Button Content="Бронювання" FontSize="25" HorizontalAlignment="Center"
-            VerticalAlignment="Center" Padding="20,5,20,5" Background="OrangeRed" Click="Button_Click_1"/>
+            VerticalAlignment="Center" Width="300" Height="80" Padding="20,5,20,5" Background="Yellow" Click="Button_Click_1"/>
 
-        <Button Content="Адміністратор" FontSize="25" Grid.Row="1" HorizontalAlignment="Center" 
-            Padding="20,5,20,5" VerticalAlignment="Center" Background="OrangeRed" Click="Button_Click"/>
+        <Button Content="Адміністратор" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" 
+            Padding="20,5,20,5" Width="300" Height="80" VerticalAlignment="Center" Background="Yellow" Click="Button_Click"/>
 
-        <Button Content="Історія" FontSize="25" Grid.Row="2" HorizontalAlignment="Center" 
-            Padding="20,5,20,5" VerticalAlignment="Center" Background="OrangeRed" Click="Button_Click_2"/>
-
+        </Grid>
     </Grid>
 </Window>

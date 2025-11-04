@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:hotelapp"
         mc:Ignorable="d"
-        Title="PassWindow" Height="450" Width="800" Background="MediumAquamarine">
+        Title="HotelApp" Height="450" Width="800" WindowState="Maximized" Background="MediumAquamarine">
     <Grid>
         
         <StackPanel VerticalAlignment="Center">
-            <TextBlock Text="Введіть пароль адміністратора" Margin="50 20 50 0" />
-            <PasswordBox x:Name="Pass" Margin="50 5 50 0"/>
+            <TextBlock Text="Введіть пароль адміністратора" FontSize="24" Margin="50 20 50 0" />
+            <PasswordBox x:Name="Pass" FontSize="24" Margin="50 5 50 0"/>
 
             <Grid Margin="0,10,0,0">
                 <Grid.ColumnDefinitions>
@@ -18,8 +18,8 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Content="Продовжити" Margin="10,0,10,0" Grid.Column="1" Background="GreenYellow" Click="Button_Click_1"/>
-                <Button Content="Повернутися" Margin="10,0,10,0" Background="Yellow" Click="Button_Click"/>
+                <Button Content="Продовжити" FontSize="24" Margin="10,0,10,0" Grid.Column="1" Background="GreenYellow" Click="Button_Click_1"/>
+                <Button Content="Головне меню" FontSize="24" Margin="10,0,10,0" Background="Yellow" Click="Button_Click"/>
             </Grid>
         </StackPanel>
         

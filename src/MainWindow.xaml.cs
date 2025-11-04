@@ -35,11 +35,5 @@ namespace hotelapp
             Close();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            ViewWindow viewWindow = new ViewWindow();
-            viewWindow.Show();
-            Close();
-        }
     }
 }

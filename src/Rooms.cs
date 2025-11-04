@@ -16,5 +16,6 @@ namespace hotelapp
         public decimal PricePerNight { get; set; }
         public bool IsAvailable { get; set; }
         public virtual List<Booking>? Bookings { get; set; }
+        public DateTime BookingTo { get; set; } = DateTime.MinValue;
     }
 }

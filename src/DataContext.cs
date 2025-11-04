@@ -12,7 +12,7 @@ namespace hotelapp
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source = HotelData2.db");
+            optionsBuilder.UseSqlite("Data Source = HotelData3.db");
         }
         public DbSet<Rooms> Rooms {  get; set; }
         public DbSet<Booking> Bookings { get; set; }

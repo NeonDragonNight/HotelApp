@@ -13,16 +13,18 @@ namespace hotelapp
             LoadRooms();
         }
 
+        //Функція авантаження інформації з бази даних
         private void LoadRooms()
         {
             using var db = new DataContext();
             RoomsGrid.ItemsSource = db.Rooms.Where(r => !r.IsAvailable).OrderBy(r => r.Number).ToList();
         }
 
+        //Бронювання обраної кімнати
         private void BtnBook_Click(object sender, RoutedEventArgs e)
         {
             if (RoomsGrid.SelectedItem is not Rooms sel) { MessageBox.Show("Оберіть кімнату"); return; }
-            if (string.IsNullOrWhiteSpace(TxtName.Text) || string.IsNullOrWhiteSpace(TxtPhone.Text)) { MessageBox.Show("Вкажіть ім'я та телефон"); return; }
+            if (string.IsNullOrWhiteSpace(TxtName.Text) || string.IsNullOrWhiteSpace(TxtPhone.Text)) { MessageBox.Show("Вкажіть ім'я прізвище та телефон"); return; }
             if (!int.TryParse(TxtDays.Text, out var days) || days <= 0) { MessageBox.Show("Невірна кількість днів"); return; }
 
             using var db = new DataContext();
@@ -39,11 +41,15 @@ namespace hotelapp
                 To = System.DateTime.Now.Date.AddDays(days),
                 TotalPrice = (room.PricePerNight * days)
             };
+
             room.IsAvailable = true;
+
+            room.BookingTo = DateTime.Now.Date.AddDays(days);
+
             db.Bookings.Add(booking);
             db.SaveChanges();
 
-            MessageBox.Show($"Кімнату {room.Number} заброньовано на {days} дн. за {(room.PricePerNight * days)}");
+            MessageBox.Show($"Кімнату {room.Number} заброньовано на {days} дн. за {(room.PricePerNight * days)}грн");
             LoadRooms();
         }
 
@@ -66,7 +72,7 @@ namespace hotelapp
             {
                 decimal total = _selectedRoom.PricePerNight * days;
 
-                DoSplati.Text = "До сплати: " + total.ToString();
+                DoSplati.Text = "До сплати: " + total.ToString() + "грн";
             }
         }
 
